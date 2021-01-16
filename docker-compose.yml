@@ -6,7 +6,7 @@ services:
     command: --default-authentication-plugin=mysql_native_password
     restart: always
     environment: 
-      MYSQL_ROOT_PASSWORD: example
+      - MYSQL_ROOT_PASSWORD
   
   adminer: 
     image: adminer 
@@ -16,7 +16,7 @@ services:
   
   web:
       build: .
-      command: python manage.py runserver 0.0.0.0:8000
+      command: bash -c "python manage.py migrate && python manage.py makemigrations && python manage.py runserver 0.0.0.0:8000"
       volumes:
         - .:/blog
       ports:
