@@ -5,21 +5,29 @@ services:
     image: mysql
     command: --default-authentication-plugin=mysql_native_password
     restart: always
+    env_file:
+      - ./MySQL.env
     environment: 
-      - MYSQL_ROOT_PASSWORD
-  
-  adminer: 
-    image: adminer 
-    restart: always
-    ports: 
-      - 8080:8080
-  
+      MYSQL_DATABASE: 'blog'
+      MYSQL_USER: 'django'
+      MYSQL_PORT: '3306'
+      MYSQL_PASSWORD: $$MYSQL_PASSWORD
+      MYSQL_ROOT_PASSWORD: $$MYSQL_ROOT_PASSWORD
+    ports:
+      - "3306:3306"
+
   web:
+      environment:
+        SECRET_KEY: $$SECRET_KEY
+        MYSQL_ROOT_PASSWORD: $$MYSQL_ROOT_PASSWORD
       build: .
       command: bash -c "python manage.py migrate && python manage.py makemigrations && python manage.py runserver 0.0.0.0:8000"
+      restart: on-failure
       volumes:
         - .:/blog
       ports:
         - "8000:8000"
       depends_on:
       - db
+      expose:
+        - "8000"
