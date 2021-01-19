@@ -13,6 +13,8 @@ services:
       MYSQL_PORT: '3306'
       MYSQL_PASSWORD: $$MYSQL_PASSWORD
       MYSQL_ROOT_PASSWORD: $$MYSQL_ROOT_PASSWORD
+    volumes:
+    - ./mysqlvolume:/var/lib/mysql
     ports:
       - "3306:3306"
 
