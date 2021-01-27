@@ -1,0 +1,44 @@
+{% load static %}
+{% load socialaccount %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/stylesSignup.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sign Up</title>
+</head>
+<body>
+    <header class="header">
+        <img class="header__img" src="../static/images/flashlogo.png" alt="Logo"></img>
+        <h1 class="header__title">Our posts</h1>
+    </header>
+    <section class="signup">
+        <div class="signup__container">
+            <h2>Sign Up</h2>
+            <form class="signup__container--form">
+                <input class="input" type="email" placeholder="Email">
+                <input class="input" type="text" placeholder="Username">
+                <input class="input" type="password" placeholder="Password">
+                <input class="input" type="password" placeholder="Confirm Password">
+                <button class="button">Sign Up</button>
+                <div class="signup__container--remember-me">
+                    <label>
+                        <input type="checkbox" name="" id="chBox1" value="checbox">Remember me
+                    </label>
+                </div>
+            </form>
+            <section class="signup__container--social-media">
+                <div><img src="../static/images/googlelogo.png" alt="googleIcon"><a href="{% provider_login_url 'google' %}">Sign Up with Google</a></div>
+                <!---<div><img src="/twitterlogo.png" alt="TwitterIcon">Sign Up with Twitter</div> --->
+            </section>
+        </div>
+    </section>
+    <footer class="footer">
+        <a href="/Jejeje">I love you</a>
+    </footer>
+</body>
+</html>
+

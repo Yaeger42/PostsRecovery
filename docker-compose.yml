@@ -19,17 +19,27 @@ services:
       - "3306:3306"
 
   web:
-      environment:
-        SECRET_KEY: $$SECRET_KEY
-        MYSQL_ROOT_PASSWORD: $$MYSQL_ROOT_PASSWORD
-      build: .
-      command: bash -c "python manage.py migrate && python manage.py makemigrations && python manage.py runserver 0.0.0.0:8000"
-      restart: on-failure
-      volumes:
-        - .:/blog
-      ports:
-        - "8000:8000"
-      depends_on:
+    environment:
+      SECRET_KEY: $$SECRET_KEY
+      MYSQL_ROOT_PASSWORD: $$MYSQL_ROOT_PASSWORD
+    build: ./
+    command: bash -c "python manage.py migrate && python manage.py makemigrations && python manage.py runserver 0.0.0.0:8000"
+    restart: on-failure
+    volumes:
+      - .:/blog
+    ports:
+      - "8000:8000"
+    depends_on:
       - db
-      expose:
-        - "8000"
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    ports: 
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./confs/nginx:/etc/nginx/conf.d
+    depends_on:
+      - web
+      - db 
+    restart: always

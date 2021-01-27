@@ -1,0 +1,250 @@
+
+body
+{
+    background-color: #ffffff;
+    /* background: url(Images/blue-and-silver-stetoscope-40568.jpg) center; */
+    font-family: 'Questrial', sans-serif;
+    margin: 0;   
+    color: black
+}
+
+.input {
+    background-color: transparent;
+    border-left: 0px;
+    border-top: 0px;
+    border-right: 0px;
+    border-bottom: 2px solid white;
+    font-family: 'Questrial', sans-serif;
+    font-size: 16px;
+    height: 50px;
+    margin-bottom: 20px;
+    padding: 0px 20px;
+    outline: none;
+    color: black;
+}
+
+.header
+{
+    /*background-color: #65e055*/
+     /*background-image: linear-gradient(90deg, #65e055 0%, #086179 100%);   */
+    display: flex;
+    height: 114px;
+    justify-content: space-between;
+    width: 100%;
+    color: black;
+}
+
+.header__title
+{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 50%;
+    margin-right: 81px;
+}
+
+.header__img
+{
+    margin-top: 10px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    margin-left: 43%;
+    width: 100px;
+}
+ 
+.signup
+{
+    align-items: center;
+    /* background: linear-gradient(#21c98b, #AB88FF);*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: calc(100vh - 200px);
+    padding: 0px 30px;
+}
+
+.signup__container
+{
+    background-color: rgba(0, 0, 0, 0.2);
+    border: 2px solid white;
+    border-radius: 40px;
+    color: black;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 60px 200px 40px;
+    min-height: 200px;
+    width: 100;
+}
+
+.signup__container--form
+{
+    display: flex;
+    flex-direction: column;
+    color: black;
+    align-items: left;
+}
+
+.signup__container--form label
+{
+    font-size: 15px;
+    color: black;
+}
+
+.signup__container--remember-me
+{
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.signup__container--remember-me a 
+{
+    color: white;
+    font-size: 14px;
+    text-decoration: none;
+    margin-top: 5px;
+}
+
+.signup__container--remember-me a:hover 
+{
+    color: white;
+    font-size: 14px;
+    text-decoration: underline;
+
+}
+
+.signup__container--social-media > div
+{
+    align-items: center;
+    display: flex;
+    font-size: 14px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    color: black
+}
+
+.signup__container--social-media > div > img
+{
+    margin-right: 10px;
+    width: 50px;
+    padding-left: 5px;
+    padding-top: 5px;
+}
+
+.signup__container--register
+{
+    font-size: 14px;
+    color: white;
+}
+
+.signup__container--register a
+{
+    font-size: 16px;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.signup__container--register a:hover
+{
+    text-decoration: underline;
+}
+
+.input
+{
+    background-color: transparent;
+    border-left: 0px;
+    border-top: 0px;
+    border-right: 0px;
+    border-bottom: 2px solid white;
+    font-family: 'Questrial', sans-serif;
+    font-size: 16px;
+    height: 50px;
+    margin-bottom: 20px;
+    padding: 0px 20px;
+    outline: none;
+    color: white;
+}
+
+::placeholder
+{
+    color: white;
+}
+
+.button
+{
+    background-color: rgb(18, 114, 170);
+    border: none;
+    border-radius: 25px;
+    color: white;
+    cursor: pointer;
+    font-family: 'Questrial', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    height: 33px;
+    margin-bottom: 50px;
+    margin-top: 30px;
+}
+
+.footer
+{
+    display: flex;
+    align-items: center;
+    height: 50px;
+    width: 100%;
+    /* background: #AB88FF;*/
+}
+
+
+.footer a 
+{
+    color: black;
+    cursor: pointer;
+    font-family: 'Questrial', sans-serif;
+    font-size: 14px;
+    padding-left: 0px;
+    text-decoration: none;
+    align-items: center;
+}
+
+
+.footer p 
+{
+    color: black;
+    cursor: pointer;
+    font-family: 'Questrial', sans-serif;
+    font-size: 14px;
+    padding-left: 30px;
+    text-decoration: none;
+    align-items: center;
+}
+
+
+
+.footer a:hover
+{
+    color: black;
+    cursor: pointer;
+    font-family: 'Questrial', sans-serif;
+    font-size: 14px;
+    padding-left: 0px;
+    text-decoration: underline;
+}
+
+@media only screen and(min-width: 480px)
+{
+    .signup__container
+    {
+        background-color: transparent;
+        border: none;
+        padding: 0px;
+        width: 100%;
+    }
+    .footer
+    {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
