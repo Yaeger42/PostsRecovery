@@ -24,7 +24,7 @@ class CreatePostView(LoginRequiredMixin, CreateView):
 class PostsFeedView(LoginRequiredMixin, ListView):
     """Return all published posts"""
 
-    template_name = 'posts/feed.html '
+    template_name = 'posts/feed.html'
     model = Post
     ordering = ('-created',)
     paginate_by = 10
