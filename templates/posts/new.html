@@ -11,7 +11,11 @@
 </head>
 
 <body>
-    <h4>Create a new post</h4>
+    <nav class="navbar  navbar-expand-lg navbar-dark bg-dark mb-3">
+        <a class="nav-item nav-link active" href="/posts/feed/">Home</a>
+        <a class="nav-item nav-link" href="/posts/new/">Create a new post</a>
+    </nav>
+    <h2 class="display-5">Create a new post</h2>
     <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         
@@ -30,18 +34,28 @@
             </div>
         </div>
 
-        <div class="form-group">
-            <input
+        <div class="input-group">
+            <div class="input-group-prepend">
+            </div>
+            <textarea 
+                class="form-control mb-3"
+                type="text"
+                name="body"
+                rows="20"
+                placeholder="Body"></textarea>
+            <!--<input
                 class="form-control {% if form.title.errors %}is-invalid{% endif %}"
-                type="textarea"
+                type="text"
+                rows="3"
                 name="body"
                 placeholder="Body"
             >
             <div class="invalid-feedback">
                 {% for error in form.title.errors %}{{ error }}{% endfor %}
             </div>
+            -->
         </div>
-        <button type="submit" class="btn btn-primary btn-block mt-5">Publish!</button>
+        <button type="submit" class="btn btn-primary mt-5">Publish!</button>
     </form>
 </body>
 </html>
