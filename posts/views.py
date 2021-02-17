@@ -4,12 +4,9 @@ from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import ListView, DetailView, CreateView
 
-#Forms
-#from posts.forms import PostForm
 
-#Models
+from posts.forms import PostForm
 from posts.models import Post
-# Create your views here.
 
 class CreatePostView(LoginRequiredMixin, CreateView):
     """Create a new post"""

@@ -6,7 +6,7 @@ from django.urls import path
 # Views
 from posts import views
 
-urlpatters = [
+urlpatterns = [
     path(
         route = '',
         view = views.PostsFeedView.as_view(),
