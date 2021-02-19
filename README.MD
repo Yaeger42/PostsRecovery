@@ -1,7 +1,7 @@
 # How to run this project
 - After copying the project, in the root folder create an archive called MySQL.env
 - Inside of ```MySQL.env``` enter these keys:
-    ```SECRET_KEY=
+```SECRET_KEY=YourSecretKey
     MYSQL_ROOT_PASSWORD=yourPassword
     MYSQL_PASSWORD=yourPassword```
 - Build the image:
