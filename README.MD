@@ -3,7 +3,7 @@
 ``` docker-compose build ```
 - Run the image:
 ``` docker-compose up -d ```
-- Build the superUser for the MySQL database
+- Build the django super user for the MySQL database
 ``` docker exec -it longroad_db_1 /bin/bash ```
 Run inside of the container to create the django superuser:
 ``` python3 manage.py createsuperuser ```
