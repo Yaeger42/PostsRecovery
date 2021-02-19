@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block head_content %}
+<title>{{ object.title }}</title>
+{% endblock %}
+
+{% block container %}
+
+<div class="container">
+    <h4 class="mb-1">{{ post.title }}</h4>
+    <p class="mb-1">{{ post.body }}</p>
+    <small>Creation date: {{ post.created }}</small>
+    <br>
+    <a href="edit/{{ post.pk }}" style="margin-right: 10px;">Edit</a>
+    <a href="{{ post.pk }}/delete">Delete</a>
+</div>
+{% endblock %}

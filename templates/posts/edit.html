@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block head_content %}
+<title>Edit {{ post.title }}</title>
+{% endblock %}
+{% block container %}
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="hidden" name="user" value="{{ user.pk }}" />
+    <div class="form-group">
+        <input
+        class="form-control {% if form.title.errors %}is-invalid{% endif %}"
+        type="text"
+        name="title"
+        placeholder="Title"
+        value="{{ post.title }}"
+        >
+        <div class="invalid-feedback">
+            {% for error in form.title.errors %}{{ error }}{% endfor %}
+        </div>
+    </div>
+
+    <div class="input-group">
+        <div class="input-group-prepend">
+        </div>
+        <textarea 
+            class="form-control mb-3"
+            type="text"
+            name="body"
+            rows="20"
+            placeholder="Body"> {{ post.body }}</textarea>
+    </div>
+    <button type="submit" class="btn btn-primary mt-5">Edit</button>
+</form>
+{% endblock %}
