@@ -1,7 +1,8 @@
 # How to run this project
 - After copying the project, in the root folder create an archive called MySQL.env
+- Generate a secret key (you can use any method)
 - Inside of ```MySQL.env``` enter these keys:```
-        SECRET_KEY=YourSecretKey                   
+        SECRET_KEY=YourGeneratedSecretKeyHere                   
         MYSQL_ROOT_PASSWORD=yourPassword
         MYSQL_PASSWORD=yourPassword 
         ```
